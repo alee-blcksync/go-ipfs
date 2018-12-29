@@ -35,9 +35,9 @@ startup_cluster() {
   bound=$(expr "$num_nodes" - 1)
 
   if test -n "$other_args"; then
-    test_expect_success "start up nodes with additional args" '
-      iptb start --args $other_args
-    '
+    test_expect_success "start up nodes with additional args" "
+      iptb start --args \"${other_args[@]}\"
+    "
   else
     test_expect_success "start up nodes" '
       iptb start
@@ -55,4 +55,10 @@ startup_cluster() {
       test_fsh cat "swarm_peers_$i"
     '
   done
+}
+
+iptb_wait_stop() {
+    while ! iptb for-each sh -c '! { test -e "$IPFS_PATH/repo.lock" && fuser -f "$IPFS_PATH/repo.lock" >/dev/null; }'; do
+        go-sleep 10ms
+    done
 }
