@@ -96,6 +96,7 @@ func Serve(node *core.IpfsNode, lis net.Listener, options ...ServeOption) error 
 
 	var serverError error
 	serverProc := node.Process().Go(func(p goprocess.Process) {
+    server.SetKeepAlivesEnabled(false)
 		serverError = server.Serve(lis)
 	})
 
