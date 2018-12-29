@@ -9,11 +9,11 @@ import (
 	"path/filepath"
 	"syscall"
 
-	commands "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	corehttp "github.com/ipfs/go-ipfs/core/corehttp"
-	coreunix "github.com/ipfs/go-ipfs/core/coreunix"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
+	commands "github.com/alee-blocksync/go-ipfs/commands"
+	core "github.com/alee-blocksync/go-ipfs/core"
+	corehttp "github.com/alee-blocksync/go-ipfs/core/corehttp"
+	coreunix "github.com/alee-blocksync/go-ipfs/core/coreunix"
+	fsrepo "github.com/alee-blocksync/go-ipfs/repo/fsrepo"
 
 	config "gx/ipfs/QmPEpj17FDRpc7K1aArKZp3RsHtzRMKykeK9GVgn4WQGPR/go-ipfs-config"
 	process "gx/ipfs/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess"
